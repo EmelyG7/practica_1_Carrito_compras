@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'org.pucmm.practica_1'
+version = '1.0-SNAPSHOT'
+description = 'Práctica de JUnit - Sistema de Carrito de Compras'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.platform:junit-platform-suite-engine:1.10.1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+test {
+    useJUnitPlatform() {
+        include '**/*Test.class'
+        include '**/*TestSuite.class'
+    }
+
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        showStandardStreams = true
+    }
+
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion = "0.8.11"
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+                    // Excluir paquetes si es necesario
+            ])
+        }))
+    }
+}
