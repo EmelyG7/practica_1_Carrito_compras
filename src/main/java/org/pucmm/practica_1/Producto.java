@@ -1,7 +1,5 @@
 package org.pucmm.practica_1;
 
-
-// Clase Producto
 public class Producto {
     private String nombre;
     private double precio;

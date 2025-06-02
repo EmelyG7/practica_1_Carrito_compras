@@ -1,6 +1,5 @@
 package org.pucmm.practica_1;
 
-// Clase ItemCarrito
 public class ItemCarrito {
     private Producto producto;
     private int cantidad;

@@ -1,10 +1,9 @@
 package org.pucmm.practica_1;
 
-// Clase Carrito
 import java.util.*;
 
 public class Carrito {
-    private List<ItemCarrito> items;
+    private final List<ItemCarrito> items;
     
     public Carrito() {
         this.items = new ArrayList<>();

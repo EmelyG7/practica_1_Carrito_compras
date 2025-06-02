@@ -6,10 +6,8 @@ import org.pucmm.practica_1.ItemCarrito;
 import org.pucmm.practica_1.Producto;
 
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-// Pruebas para la clase Carrito
 public class CarritoTest {
 
     private Carrito carrito;

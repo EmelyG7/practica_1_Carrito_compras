@@ -3,7 +3,6 @@ import org.pucmm.practica_1.Producto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// Pruebas para la clase Producto
 public class ProductoTest {
 
     private Producto producto;
